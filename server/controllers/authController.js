@@ -17,8 +17,8 @@ module.exports = {
     const user = registeredUser[0];
     req.session.user = {
       isAdmin: user.is_admin,
-      id: user.id,
       username: user.username,
+      id: user.id,
     };
 
     return res.status(201).send(req.session.user);
