@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Header.css";
 import axios from "axios";
 
+//We left off on step 3
 export default class Header extends Component {
   constructor() {
     super();
