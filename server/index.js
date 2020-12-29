@@ -4,6 +4,8 @@ const session = require("express-session");
 const massive = require("massive");
 const authCtrl = require("./controllers/authController.js");
 
+// const axios = require(axios);
+
 const PORT = 4000;
 
 const { SESSION_SECRET, CONNECTION_STRING } = process.env;
@@ -29,5 +31,6 @@ app.use(
 );
 
 app.post("/auth/register", authCtrl.register);
+app.post("/auth/login", authCtrl.login);
 
 app.listen(PORT, () => console.log(`Port ${PORT} Ready Master Nya~`));
