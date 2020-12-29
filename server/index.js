@@ -34,6 +34,8 @@ app.use(
 app.post("/auth/register", authCtrl.register);
 app.post("/auth/login", authCtrl.login);
 app.get("/auth/logout", authCtrl.logout);
+
 app.get("/api/treasure/dragon", treasureCtrl.dragonTreasure);
+app.get("/api/treasure/user", treasureCtrl.getUserTreasure);
 
 app.listen(PORT, () => console.log(`Port ${PORT} Ready Master Nya~`));
