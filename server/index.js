@@ -4,6 +4,7 @@ const session = require("express-session");
 const massive = require("massive");
 const authCtrl = require("./controllers/authController.js");
 const treasureCtrl = require("./controllers/treasureController");
+const auth = require("./middleware/authMiddleware");
 
 // const axios = require(axios);
 
@@ -36,6 +37,6 @@ app.post("/auth/login", authCtrl.login);
 app.get("/auth/logout", authCtrl.logout);
 
 app.get("/api/treasure/dragon", treasureCtrl.dragonTreasure);
-app.get("/api/treasure/user", treasureCtrl.getUserTreasure);
+app.get("/api/treasure/user", auth.usersOnly, treasureCtrl.getUserTreasure);
 
 app.listen(PORT, () => console.log(`Port ${PORT} Ready Master Nya~`));
